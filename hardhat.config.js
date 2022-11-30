@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('dotenv').config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
     compilers: [
       {version: "0.5.5"},
       {version: "0.6.6"},
-      {version: "0.8.8"},
+      {version: "0.8.9"},
     ]
   },
   networks: {
@@ -19,7 +20,7 @@ module.exports = {
     testnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
       chainId: 97,
-      accounts: [""]
+      accounts: [process.env.WALLET_PRIVATE]
     },
     mainnet: {
       url: "https://bsc-dataseed1.binance.org/",
